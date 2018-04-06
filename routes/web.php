@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['as' => 'pessoa.', 'prefix' => 'pessoa'], function (){
+    Route::post( '', ['as' => 'lista', 'uses' => 'PessoaController@list'] );
+});
