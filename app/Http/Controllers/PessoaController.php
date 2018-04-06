@@ -128,19 +128,20 @@ class PessoaController extends Controller
 
     }
 
-    public function list( Request $request ){
+    public function lista( Request $request ){
         $nome     = "%".$request->input( 'nome' )."%";
         $telefone = "%".$request->input( 'telefone' )."%";
         $empresa  = $request->input( 'empresa' );
         $setor    = $request->input( 'setor' );
         $cargo    = $request->input( 'cargo' );
         $email    = "%".$request->input( 'email' )."%";
+        //echo "teste";
 
 
 
         $pessoa = Pessoa::with(['empresa', 'setor','cargo'])
                          ->where( [
-                                     ['nm_pessoa', 'like', $nome],
+                                     [ 'nm_pessoa', 'like', $nome],
                                      [ 'telefone', 'like', $telefone ],
                                      [ 'email', 'like', $email ],
                                      [ 'cd_empresa', 'like', $empresa ],
@@ -148,6 +149,7 @@ class PessoaController extends Controller
                                      [ 'cd_cargo', 'like', $cargo ]
                                 ] )
                          ->get();
+      //  dd( $pessoa );
 
         return response()->json( $pessoa );
 

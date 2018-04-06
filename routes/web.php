@@ -19,11 +19,12 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'api'], function(){
     Route::group(['prefix' => 'pessoa'], function (){
-         Route::get( '', ['as' => 'lista', 'uses' => 'PessoaController@list'] );
+         Route::get( '', 'PessoaController@lista' );
+         Route::post( 'add', ['as' => 'add', 'uses' => 'PessoaController@add'] );
     });
 });
 
 
 
-Route::get( '/pessoa', ['as' => 'lista', 'uses' => 'PessoaController@list'] );
+
 
