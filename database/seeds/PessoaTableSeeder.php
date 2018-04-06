@@ -49,7 +49,7 @@ class PessoaTableSeeder extends Seeder
             'telefone'   => "923638810",
             'cd_empresa' => 1,
             'cd_setor'   => 3,
-            'email'      => 'angela@gmail.com',
+            'email'      => 'maria.ana@gmail.com',
             'cd_cargo'   => 3,
             'created_at'  => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at'  => Carbon::now()->format('Y-m-d H:i:s')
@@ -60,7 +60,7 @@ class PessoaTableSeeder extends Seeder
             'telefone'   => "923535885",
             'cd_empresa' => 1,
             'cd_setor'   => 3,
-            'email'      => 'angela@gmail.com',
+            'email'      => 'paula.sergio@gmail.com',
             'cd_cargo'   => 2,
             'created_at'  => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at'  => Carbon::now()->format('Y-m-d H:i:s')

@@ -11,10 +11,19 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['as' => 'pessoa.', 'prefix' => 'pessoa'], function (){
-    Route::post( '', ['as' => 'lista', 'uses' => 'PessoaController@list'] );
+Route::group(['prefix' => 'api'], function(){
+    Route::group(['prefix' => 'pessoa'], function (){
+         Route::get( '', ['as' => 'lista', 'uses' => 'PessoaController@list'] );
+    });
 });
+
+
+
+Route::get( '/pessoa', ['as' => 'lista', 'uses' => 'PessoaController@list'] );
+

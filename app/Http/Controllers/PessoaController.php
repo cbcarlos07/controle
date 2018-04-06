@@ -129,8 +129,22 @@ class PessoaController extends Controller
     }
 
     public function list( Request $request ){
+        $nome     = "%".$request->input( 'nome' )."%";
+        $telefone = "%".$request->input( 'telefone' )."%";
+        $email    = "%".$request->input( 'email' )."%";
+        $empresa  = $request->input( 'empresa' );
+        $setor    = $request->input( 'setor' );
+        $cargo    = $request->input( 'cargo' );
+
+
 
         $pessoa = Pessoa::with(['empresa', 'setor','cargo'])
+                         ->where( 'nm_pessoa', 'like', $nome )
+                         ->orWhere( 'telefone', 'like', $telefone )
+                         ->orWhere( 'email', 'like', $email )
+                         ->orWhere( 'cd_empresa', $empresa )
+                         ->orWhere( 'cd_setor', $setor )
+                         ->orWhere( 'cd_cargo', $cargo )
                          ->get();
 
         return response()->json( $pessoa );
