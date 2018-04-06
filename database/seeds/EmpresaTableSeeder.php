@@ -2,7 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 class EmpresaTableSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.
@@ -12,7 +14,9 @@ class EmpresaTableSeeder extends Seeder
     public function run()
     {
         DB::table('empresa')->insert([
-            'nm_empresa' => "Digiboard"
+            'nm_empresa' => "Digiboard",
+            'created_at'  => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at'  => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }

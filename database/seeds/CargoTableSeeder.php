@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Carbon;
 class CargoTableSeeder extends Seeder
 {
     /**
@@ -12,15 +12,22 @@ class CargoTableSeeder extends Seeder
     public function run()
     {
         DB::table('cargo')->insert([
-            'nm_cargo' => "Developer"
+            'ds_cargo'    => "Developer",
+            'created_at'  => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at'  => Carbon::now()->format('Y-m-d H:i:s')
+
         ]);
 
         DB::table('cargo')->insert([
-            'nm_cargo' => "Analyst"
+            'ds_cargo' => "Analyst",
+            'created_at'  => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at'  => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
         DB::table('cargo')->insert([
-            'nm_cargo' => "Manager Project"
+            'ds_cargo' => "Manager Project",
+            'created_at'  => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at'  => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }
