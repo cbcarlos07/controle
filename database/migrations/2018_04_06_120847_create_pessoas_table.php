@@ -24,6 +24,7 @@ class CreatePessoasTable extends Migration
             $table->foreign( 'cd_empresa' )->references('cd_empresa')->on('empresa');
             $table->foreign( 'cd_setor' )->references('cd_setor')->on('setor');
             $table->foreign( 'cd_cargo' )->references('cd_cargo')->on('cargo');
+            $table->timestamps();
         });
     }
 
