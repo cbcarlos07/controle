@@ -121,11 +121,11 @@ class PessoaController extends Controller
     public function delete( Request $request ){
         //Getting data
         $id        = $request->input( 'codigo' );
+        echo "Codigo: ".$id;
         $pessoa = Pessoa::find( $id );
         //Deleting data from database
-        $teste = $pessoa->save();
-        return response()->json( array('returno' => $teste ) );
-
+        $teste = $pessoa->delete();
+        return response()->json( array('retorno' => $teste ) );
     }
 
     public function lista( Request $request ){
