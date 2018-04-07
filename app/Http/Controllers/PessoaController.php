@@ -8,7 +8,7 @@ use App\Pessoa;
 class PessoaController extends Controller
 {
     public function add( Request $request ){
-        //Getting data
+        //Retrieving data
         $nome      = $request->input( 'nome' );
         $telefone  = $request->input( 'telefone' );
         $empresa   = $request->input( 'empresa' );
@@ -63,7 +63,7 @@ class PessoaController extends Controller
     }
 
     public function edit( Request $request ){
-        //Getting data
+        //Retrieving data
         $id        = $request->input( 'codigo' );
         $nome      = $request->input( 'nome' );
         $telefone  = $request->input( 'telefone' );
@@ -119,7 +119,7 @@ class PessoaController extends Controller
     }
 
     public function delete( Request $request ){
-        //Getting data
+        //Retrieving data
         $id        = $request->input( 'codigo' );
         echo "Codigo: ".$id;
         $pessoa = Pessoa::find( $id );
@@ -129,6 +129,7 @@ class PessoaController extends Controller
     }
 
     public function lista( Request $request ){
+        //Getting data
         $nome     = "%".$request->input( 'nome' )."%";
         $telefone = "%".$request->input( 'telefone' )."%";
         $empresa  = $request->input( 'empresa' );
@@ -138,7 +139,7 @@ class PessoaController extends Controller
         //echo "teste";
 
 
-
+        //Inner join in tables
         $pessoa = Pessoa::with(['empresa', 'setor','cargo'])
                          ->where( [
                                      [ 'nm_pessoa', 'like', $nome],
@@ -150,7 +151,7 @@ class PessoaController extends Controller
                                 ] )
                          ->get();
       //  dd( $pessoa );
-
+        //returning result
         return response()->json( $pessoa );
 
     }
