@@ -21,22 +21,22 @@ Route::get('/', function () {
  */
 Route::group(['prefix' => 'api'], function(){
     Route::group(['prefix' => 'pessoa'], function (){
-         Route::get( '', ['as' => 'lista', 'uses' => 'PessoaController@lista'] );
-         Route::get( 'add', ['as' => 'add', 'uses' => 'PessoaController@add'] );
-         Route::get( 'edit', ['as' => 'edit', 'uses' => 'PessoaController@edit'] );
+         Route::post( '', ['as' => 'lista', 'uses' => 'PessoaController@lista'] );
+         Route::post( 'add', ['as' => 'add', 'uses' => 'PessoaController@add'] );
+         Route::post( 'edit', ['as' => 'edit', 'uses' => 'PessoaController@edit'] );
          Route::get( 'delete', ['as' => 'delete', 'uses' => 'PessoaController@delete'] );
     });
 
     Route::group(['prefix' => 'empresa'], function (){
-        Route::get( '', ['as' => 'lista', 'uses' => 'EmpresaController@lista'] );
+        Route::post( '', ['as' => 'lista', 'uses' => 'EmpresaController@lista'] );
     });
 
     Route::group(['prefix' => 'cargo'], function (){
-        Route::get( '', ['as' => 'lista', 'uses' => 'CargoController@lista'] );
+        Route::post( '', ['as' => 'lista', 'uses' => 'CargoController@lista'] );
     });
 
     Route::group(['prefix' => 'setor'], function (){
-        Route::get( '', ['as' => 'lista', 'uses' => 'SetorController@lista'] );
+        Route::post( '', ['as' => 'lista', 'uses' => 'SetorController@lista'] );
     });
 });
 
