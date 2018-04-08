@@ -62,6 +62,12 @@ class PessoaController extends Controller
 
     }
 
+    public function getData( Request $request ){
+        $id = $request->input( 'codigo' );
+        $pessoa = Pessoa::with([ 'empresa','setor','cargo' ])->first();
+        return response()->json( $pessoa );
+    }
+
     public function edit( Request $request ){
         //Retrieving data
         $id        = $request->input( 'codigo' );
@@ -121,7 +127,7 @@ class PessoaController extends Controller
     public function delete( Request $request ){
         //Retrieving data
         $id        = $request->input( 'codigo' );
-        echo "Codigo: ".$id;
+
         $pessoa = Pessoa::find( $id );
         //Deleting data from database
         $teste = $pessoa->delete();
@@ -155,4 +161,39 @@ class PessoaController extends Controller
         return response()->json( $pessoa );
 
     }
+
+    public function listaPessoas(){
+        $pessoa = Pessoa::orderBy( 'nm_pessoa' )->get();
+        return response()->json( $pessoa );
+    }
+
+    public function listaTelefone(){
+        $pessoa = Pessoa::orderBy( 'nm_pessoa' )->get();
+        return response()->json( $pessoa );
+    }
+
+    public function listaEmail(){
+        $pessoa = Pessoa::orderBy( 'nm_pessoa' )->get();
+        return response()->json( $pessoa );
+    }
+
+    public function listaNome( Request $request ){
+        //Getting data
+        $nome     = "%".$request->input( 'nome' )."%";
+        //echo "teste";
+
+
+        //Inner join in tables
+        $pessoa = Pessoa::with(['empresa', 'setor','cargo'])
+            ->where( [
+                [ 'nm_pessoa', 'like', $nome]
+            ] )
+            ->get();
+        //  dd( $pessoa );
+        //returning result
+        return response()->json( $pessoa );
+
+    }
+
+
 }

@@ -24,7 +24,12 @@ Route::group(['prefix' => 'api'], function(){
          Route::post( '', ['as' => 'lista', 'uses' => 'PessoaController@lista'] );
          Route::post( 'add', ['as' => 'add', 'uses' => 'PessoaController@add'] );
          Route::post( 'edit', ['as' => 'edit', 'uses' => 'PessoaController@edit'] );
-         Route::get( 'delete', ['as' => 'delete', 'uses' => 'PessoaController@delete'] );
+         Route::post( 'delete', ['as' => 'delete', 'uses' => 'PessoaController@delete'] );
+         Route::post( 'lista', ['as' => 'list', 'uses' => 'PessoaController@listaPessoas'] );
+         Route::post( 'fone', ['as' => 'fone', 'uses' => 'PessoaController@listaTelefone'] );
+         Route::post( 'mail', ['as' => 'mail', 'uses' => 'PessoaController@listaEmail'] );
+         Route::post( 'nome', ['as' => 'nome', 'uses' => 'PessoaController@listaNome'] );
+         Route::post( 'dado', ['as' => 'dado', 'uses' => 'PessoaController@getData'] );
     });
 
     Route::group(['prefix' => 'empresa'], function (){
