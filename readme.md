@@ -9,6 +9,8 @@ O sistema foi desenvolvido com os seguintes dados:
  Senha:   **123**
  
  
+ Por questões de segurança do sistema, todas as requisições ao mesmo têm que ser feitas via **POST**
+ 
  Caso não queira utilizar o arquivo **\*.sql** para importar os dados, pode-se usar o próprio Laravel para criar as tabelas bastando apenas dar o comando   
  
  ```
