@@ -72,7 +72,7 @@ O sistema foi desenvolvido com os seguintes dados:
   
   Se quiser testar o webservice sem a necessidade de uma interface pode usar o [Postman](https://www.getpostman.com/).
   
-     
+  ![alt text](https://github.com/cbcarlos07/controle/blob/master/img/postman.jpg)   
      
   
  
