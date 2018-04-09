@@ -1,5 +1,7 @@
 O sistema foi desenvolvido em PHP utilizando framework Laravel como ORM Eloquent para criar as querys de consulta.
 
+O Webservice foi desenvolvido nos sistemas operacionais Ubuntu 16.04 LTS e Linux Mint 64bits Cinamon (Sylvia)
+
 Na pasta sql tem o banco de dados.
 
 O sistema foi desenvolvido com os seguintes dados:  
