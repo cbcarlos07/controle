@@ -58,7 +58,20 @@ O sistema foi desenvolvido com os seguintes dados:
   Mais detalhes: [Clique aqui](https://gilbertoalbino.com/instalacao-do-composer-no-ubuntu/)
   
   
-
+  Dica: Para uma boa execução do projeto no servidor apache de vossa preferência, pode-se criar um alias para executar o Sistema
+  
+  No Windows:
+  
+  http://www.paginaemconstrucao.com.br/apache-alias/
+  
+  No Linux Ubuntu:
+  
+  https://mclibaneo.com.br/2017/06/17/criando-um-alias-para-o-apache-2-4-no-ubuntu/
+  
+  [Este](https://getcomposer.org/) site tem uma descrição de como usar o composer em sistemas operacionais Windows e Linux
+  
+  Se quiser testar o webservice sem a necessidade de uma interface pode usar o [Postman](https://www.getpostman.com/).
+  
      
      
   
