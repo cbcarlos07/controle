@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Pessoa;
+use DB;
 class PessoaController extends Controller
 {
     public function add( Request $request ){
@@ -193,6 +194,15 @@ class PessoaController extends Controller
         //returning result
         return response()->json( $pessoa );
 
+    }
+
+    public function qtdePessoas(){
+        $total = DB::table( 'pessoas as p' )
+                       ->join('cargo as c', 'c.cd_cargo', '=', 'p.cd_cargo')
+                       ->select( DB::raw('count(c.cd_cargo) as total'), 'c.ds_cargo' )
+                       ->groupBy( ['c.cd_cargo','c.ds_cargo'] )
+                       ->get();
+        return response()->json( $total );
     }
 
 

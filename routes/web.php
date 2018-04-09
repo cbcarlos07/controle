@@ -30,6 +30,7 @@ Route::group(['prefix' => 'api'], function(){
          Route::post( 'mail', ['as' => 'mail', 'uses' => 'PessoaController@listaEmail'] );
          Route::post( 'nome', ['as' => 'nome', 'uses' => 'PessoaController@listaNome'] );
          Route::post( 'dado', ['as' => 'dado', 'uses' => 'PessoaController@getData'] );
+         Route::post( 'total', ['as' => 'total', 'uses' => 'PessoaController@qtdePessoas'] );
     });
 
     Route::group(['prefix' => 'empresa'], function (){
